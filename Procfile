@@ -1,1 +1,1 @@
-web: gunicorn foodupmood.wsgi
+web: gunicorn foodmood.wsgi

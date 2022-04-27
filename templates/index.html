@@ -13,22 +13,22 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="image-container">
-                                    {% if "placeholder" in recipe.featured_image.url %}
+                                    {% if "placeholder" in Recipe.featured_image.url %}
                                     <img class="card-img-top"
                                         src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ recipe.featured_image.url }}">
+                                    <img class="card-img-top" src=" {{ Recipe.featured_image.url }}">
                                     {% endif %}
                                     <div class="image-flash">
-                                        <p class="author">Author: {{ recipe.author }}</p>
+                                        <p class="author">Author: {{ Recipe.author }}</p>
                                     </div>
                                 </div>
-                                <a href="#" class="recipe-link">
-                                    <h2 class="card-title">{{ recipe.title }}</h2>
+                                <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
+                                    <h2 class="card-title">{{ Recipe.title }}</h2>
                                 </a>
                                 <hr />
-                                <p class="card-text text-muted h6">{{ recipe.created_on}} <i class="far fa-heart"></i>
-                                    {{ recipe.number_of_likes }}</p>
+                                <p class="card-text text-muted h6">{{ Recipe.created_on }} <i 
+                                        class="far fa-heart"></i>{{ Recipe.number_of_likes }}</p>
                             </div>
                         </div>
                     </div>

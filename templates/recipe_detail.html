@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 {% load crispy_forms_tags %}
 
@@ -14,7 +16,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://res.cloudinary.com/jnehmeh87/image/upload/v1651137140/Good_Food_Display_-_NCI_Visuals_Online_lcfmur.jpg" width="100%">
                 {% else %}
                 <img src=" {{ recipe.featured_image.url }}" width="100%">
                 {% endif %}
@@ -31,6 +33,8 @@
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
                     {{ recipe.ingredients | safe }}
+                </p>
+                <p class="card-text ">
                     {{ recipe.preparation_content | safe }}
                 </p>
                 <div class="row">

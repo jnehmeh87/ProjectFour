@@ -15,7 +15,7 @@ class RecipeList(generic.ListView):
 class RecipeDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Recipe.objects.filter(status=1)
+        queryset = recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.filter(approved=True).order_by('created_on')
         liked = False
@@ -65,14 +65,15 @@ class RecipeDetail(View):
             },
         )
 
+
 class RecipeLike(View):
 
-    def post(self, request, slug):
+    def recipe(self, request, slug):
         recipe = get_object_or_404(Recipe, slug=slug)
 
         if recipe.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
+            recipe.likes.remove(request.user)
         else:
-            post.likes.add(request.user)
+            recipe.likes.add(request.user)
 
             return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))

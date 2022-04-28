@@ -1,7 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
+{% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -16,7 +13,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="https://res.cloudinary.com/jnehmeh87/image/upload/v1651137140/Good_Food_Display_-_NCI_Visuals_Online_lcfmur.jpg" width="100%">
+                <img src="/media/Good_Food_Display_-_NCI_Visuals_Online_lcfmur.jpg" width="100%">
                 {% else %}
                 <img src=" {{ recipe.featured_image.url }}" width="100%">
                 {% endif %}
@@ -122,7 +119,7 @@
                 </form>
 
                 {% endif %}
-
+                {% endif %}
             </div>
         </div>
     </div>

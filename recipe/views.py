@@ -49,7 +49,7 @@ class RecipeDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
-            comment.save
+            comment.save()
         else:
             comment_form = CommentForm()
 
@@ -68,7 +68,7 @@ class RecipeDetail(View):
 
 class RecipeLike(View):
 
-    def recipe(self, request, slug):
+    def post(self, request, slug):
         recipe = get_object_or_404(Recipe, slug=slug)
 
         if recipe.likes.filter(id=request.user.id).exists():

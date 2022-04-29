@@ -43,7 +43,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #921099bc;
 }
 
 .author {
@@ -57,12 +57,12 @@ body {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 38vh;
     width: 100%;
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #9e11a5aa;
     color: white;
     position: relative;
 }
@@ -79,10 +79,10 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
+    background: #921099;
+    -webkit-transform: skew(45deg);
+    -moz-transform: skew(45deg);
+    transform: skew(45deg);
     z-index: 100;
 }
 
@@ -93,7 +93,7 @@ body {
 
 .recipe-link:hover,
 .page-link {
-    color: #E84610;
+    color: #921099;
 }
 
 .recipe-title {

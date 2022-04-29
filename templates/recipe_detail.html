@@ -4,13 +4,13 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-8 masthead-text">
                 <!-- Recipe title goes in these h1 tags -->
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the post's created date goes after -->
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class="d-none d-md-block col-md-4 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="/media/Good_Food_Display_-_NCI_Visuals_Online_lcfmur.jpg" width="100%">
@@ -24,16 +24,24 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4  mt-1 left  top">
             <div class="card-body">
                 <!-- The recipe content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    {{ recipe.ingredients | safe }}
-                </p>
-                <p class="card-text ">
-                    {{ recipe.preparation_content | safe }}
-                </p>
+                <div class="row">
+                    <div class="card-text col-md-4">
+                        <h3>INGREDIENTS</h3>
+                        <p>
+                            {{ recipe.ingredients | safe }}
+                        </p>
+                    </div>
+                    <div class="card-text col-md-8">
+                        <h3>DIRECTIONS</h3>
+                        <p>
+                            {{ recipe.preparation_content | safe }}
+                        </p>
+                    </div>
+                </div>
                 <div class="row">
 
                     <div class="col-1">

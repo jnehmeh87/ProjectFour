@@ -2,11 +2,11 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
 
         <!-- Recipe Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="col-12 mt-3 right">
             <div class="row">
                 {% for recipe in recipe_list %}
                 <div class="col-md-4">
@@ -28,7 +28,8 @@
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.created_on }} <i 
-                                    class="far fa-heart"></i>{{ recipe.number_of_likes }}</p>
+                                    class="far fa-heart"></i> {{ recipe.number_of_likes }} 
+                                    <i class="far fa-comments"></i> {{ total_comments }}</p>
                         </div>
                     </div>
                 </div>

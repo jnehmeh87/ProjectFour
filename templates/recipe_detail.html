@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -112,13 +113,11 @@
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if commented %}
-                
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting aproval
                 </div>
-
+                {% else %}
                 {% if user.is_authenticated %}
-
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
@@ -127,7 +126,6 @@
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %}
-
                 {% endif %}
             </div>
         </div>

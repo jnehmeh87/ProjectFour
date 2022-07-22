@@ -10,15 +10,33 @@ The project covers Full Stack framework with a user centric approach in mind.  A
 
 Here is the live version of my project. [here](https://foodupmood.herokuapp.com/)
 
+## User Experience (UX)
+The user can chech the website for new recipes and see the likes and comments on each recipe to get a better review. The user can also login to be able to like recipes as well as comment on them. The user will be able to update their comments and delete them as well.
+
+### User stories
+* As a user, I want to be able to read recipes
+* As a user, I want to be able to register, login and logout
+* As a user, I want to be able to like and comment 
+* As a user, I want to be able to remove my likes and comments 
+
+#### First Time Visitor Goals
+* Have a clear idea about the game
+* having a link taking the user directly to the game
+* The user will be challenged with their knowledge of flags
+
+#### Returning Visitor Goals
+* The user haven't guessed all flags, and they want to test their knowledge again
+
+#### Frequent Visitor Goals
+* It will be their gret way to memories all flags
+
 ![program Mock Up](assets/images/.jpg)
 ### Languages used
-* Django
-	* This project uses Django as the main language.
-* HTML, CSS, Python, JavaScript, SQL, Bootstrap
+* HTML, CSS, JavaScript, Python+Django
+* Relational database (recommending MySQL or Postgres)
 
 ### How to navigate?
 
-The user can chech the websit, login and like recipes as well as comment on them
 
 ### Features:
 
@@ -69,5 +87,5 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 	* Used to generate the screenshots for responsive design.
 
 ### Credits
-- Code Institute for the deployment terminal
+- www.delish.com for the recipes and images
 - To my Mentor [Chris Quinn](https://github.com/10xOXR) who has been an exceptional help throughout the course, so far.

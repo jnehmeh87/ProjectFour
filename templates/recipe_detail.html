@@ -104,7 +104,7 @@
                             </span> wrote:
                         </p>
                         <!-- The body of the comment goes before the | -->
-                        {% if user.is_authenticated %}
+                        {% if user.is_superuser %}
                         {{ comment.body | linebreaks }}
                         <span>
                             <a href="#" aria-label="Update comment">Update</a>

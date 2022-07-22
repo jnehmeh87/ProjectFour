@@ -10,6 +10,8 @@ The project covers Full Stack framework with a user centric approach in mind.  A
 
 Here is the live version of my project. [here](https://foodupmood.herokuapp.com/)
 
+![program Mock Up](assets/images/mockup.png)
+
 ## User Experience (UX)
 The user can chech the website for new recipes and see the likes and comments on each recipe to get a better review. The user can also login to be able to like recipes as well as comment on them. The user will be able to update their comments and delete them as well.
 
@@ -18,51 +20,71 @@ The user can chech the website for new recipes and see the likes and comments on
 * As a user, I want to be able to register, login and logout
 * As a user, I want to be able to like and comment 
 * As a user, I want to be able to remove my likes and comments 
+* As a user, I want to be able to get notificatitons when I login or logout as well when I post a comment
 
 #### First Time Visitor Goals
-* Have a clear idea about the game
-* having a link taking the user directly to the game
-* The user will be challenged with their knowledge of flags
+* Get some nice cooking recipes
+* Having a list view of all recipes as well as seperated detailed recipes view
+* Register and login, for more interaction
 
 #### Returning Visitor Goals
-* The user haven't guessed all flags, and they want to test their knowledge again
+* A returning user is to give feedback on a tried recipe, or to try another one
 
 #### Frequent Visitor Goals
-* It will be their gret way to memories all flags
+* Frequent visitors will create a community of food lovers that can share their own ideas and opinions about recipes and help others byt replying to their problems
 
-![program Mock Up](assets/images/.jpg)
 ### Languages used
 * HTML, CSS, JavaScript, Python+Django
 * Relational database (recommending MySQL or Postgres)
 
-### How to navigate?
+## Features
+* The user can register, login or logout
 
+![Start of the program](assets/images/00-navbar.png)
+![Start of the program](assets/images/02-signup)
+![Start of the program](assets/images/03-login.png)
+![Start of the program](assets/images/06-logout.png)
 
-### Features:
+* As well as they get notifications messages when they do or when they comment
 
-## Existing Features
-- login, logout & signup.
-- Like,
-- Comment
+![Start of the program](assets/images/07-notifications.png)
+
+* The user can see details of the recipe author and date created as well as the count of likes and comments of each recipe on the main page with the list view of all recipes
+
+![Start of the program](assets/images/01-listview-details.png)
+
+* The authenticated user can like/dislike and comment on recipes
+
+![Start of the program](assets/images/04a-likes&comments-count-for-user.png)
+![Start of the program](assets/images/05a-comments-authenticated-user-view.png)
+
+* A non-registered user can only read comments and see how many likes each recipe has
+
+![Start of the program](assets/images/04b-likes&comments-count-for-nonuser.png)
+![Start of the program](assets/images/05b-comments-for-nonuser.png)
+
+* The footer has external links to social media accounts
+
+![Start of the program](assets/images/08-footer.png)
 
 ## Future features:
 - Add videos to the recipes
-- rate recipes
-- search for specific food
+- Rate recipes
+- Search for specific food
+- Reply on other users comments
+- Give users the ability to create a recipe
 
 ### Testing
 
 I have manually tested this project by doing the following:
-- Tested in my local terminal and the Code Institute Keroku terminal.
+- Tested in my local terminal and the Keroku terminal.
 
 ### Bugs
 ## Solved Bugs
-- getting the like/unlike fully function without throwing an error
+- Getting the comments to show on the recipe_detail.html as well being able to write one
 
 ## Remaining Bugs
-- I couldn't see the comments when I turn True in get to False
-- I wasn't able to add recipes. Function not finished
-- deploying to heroku is encountering issues
+- Updating and deleting comments are not set yet as part of the CRUD functionality
 
 ## Validator Testing
 - PEP8
@@ -70,7 +92,7 @@ I have manually tested this project by doing the following:
 
 ### Deployment
 
-This project was deployed using Code Institute's mock terminal for Heroku.
+This project was deployed using Heroku.
 - Steps for deployment:
     - Fork or clone this repository
     - Create a new Heroku app

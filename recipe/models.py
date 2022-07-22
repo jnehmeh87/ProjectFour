@@ -8,14 +8,17 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Recipe(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="recipe_post")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="recipe_post")
     updated_on = models.DateTimeField(auto_now=True)
     ingredients = models.TextField()
     preparation_content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name="recipe_likes", blank=True)
+    status = models.IntegerField(
+        choices=STATUS, default=0)
+    likes = models.ManyToManyField(
+        User, related_name="recipe_likes", blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -28,7 +31,8 @@ class Recipe(models.Model):
 
 
 class Comments(models.Model):
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()

@@ -15,7 +15,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in Recipe.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="/media/Good_Food_Display_-_NCI_Visuals_Online_lcfmur.jpg" alt="default image">
+                                    src="/assets/images/placeholder.png" alt="default image">
                                 {% else %}
                                 <img class="card-img-top" src="{{ recipe.featured_image.url }}" alt="{{ recipe.title }}">
                                 {% endif %}
@@ -29,7 +29,7 @@
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.created_on }} <i 
                                     class="far fa-heart"></i> {{ recipe.number_of_likes }} 
-                                    <i class="far fa-comments"></i> {{ total_comments }}</p>
+                                    <i class="far fa-comments"></i> {{ recipe.total_comments }}</p>
                         </div>
                     </div>
                 </div>

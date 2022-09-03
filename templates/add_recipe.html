@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 card mt-3">
+            {% if commented %}
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting aproval
+            </div>
+            {% else %}
+            <h3>Add a new recipe here:</h3>
+            <p>Only the admin can add recipes</p>
+            <form method="post" style="margin-top: 1em;" enctype="multipart/form-data">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-signup btn-lg" style="margin: 5px; margin-left: 0;">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{%endblock%}

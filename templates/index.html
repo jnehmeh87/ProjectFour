@@ -28,8 +28,13 @@
                             </a>
                             <hr />
                             <p class="card-text text-muted h6">{{ recipe.created_on }} <i 
-                                    class="far fa-heart"></i> {{ recipe.number_of_likes }} 
-                                    <i class="far fa-comments"></i> {{ recipe.total_comments }}</p>
+                                    class="far fa-heart"></i> {{ recipe.number_of_likes }}
+                                    {% if user.is_superuser %}
+                                    | <a href="{% url 'edit_recipe' recipe.slug %}">Edit</a></p>
+                                    {% else %}
+                                    </p>
+                                    {% endif %} 
+                            
                         </div>
                     </div>
                 </div>

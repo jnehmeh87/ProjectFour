@@ -9,7 +9,13 @@
                 <!-- Recipe title goes in these h1 tags -->
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the post's created date goes after -->
-                <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
+                <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }} 
+                    {% if user.is_superuser %}
+                    | <a href="{% url 'edit_recipe' recipe.slug %}">Edit</a></p>
+                    {% else %}
+                    </p>
+                    {% endif %} 
+                </p>
             </div>
             <div class="d-none d-md-block col-md-4 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->

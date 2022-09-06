@@ -80,18 +80,40 @@ class RecipeLike(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-def add_recipe(request):
-    if request.method == 'POST':
-        form = RecipeForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(RecipeList())
-    form = RecipeForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'add_recipe.html', context)
+# def add_recipe(request):
+#     if request.method == 'POST':
+#         recipe_form = RecipeForm(request.POST)
+#         if recipe_form.is_valid():
+#             recipe_form.save()
+#             return redirect('home')
+#     recipe_form = RecipeForm
+#     context = {
+#         'recipe_form': recipe_form
+#     }
+#     return render(request, 'add_recipe.html', context)
 
     
-# def add_hello(request):
-#     return render(request, 'add_recipe.html')
+# def edit_recipe(request, slug):
+#     recipe = get_object_or_404(Recipe, slug=slug)
+#     if request.method == 'POST':
+#         recipe_form = RecipeForm(request.POST, instance=recipe)
+#         if recipe_form.is_valid():
+#             recipe_form.save()
+#             return redirect('home')
+#     recipe_form = RecipeForm
+#     context = {
+#         'recipe_form': recipe_form
+#     }
+#     return render(request, 'edit_recipe.html', context)
+
+
+class AddRecipe(generic.CreateView):
+    model = Recipe
+    form_class = RecipeForm
+    template_name = 'add_recipe.html'
+
+
+class EditRecipe(generic.UpdateView):
+    model = Recipe
+    template_name = 'edit_recipe.html'
+    fields = ['title', 'ingredients', 'preparation_content', 'featured_image', 'status']

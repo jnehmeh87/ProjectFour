@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -12,8 +13,10 @@ class Recipe(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_post")
     updated_on = models.DateTimeField(auto_now=True)
-    ingredients = models.TextField()
-    preparation_content = models.TextField()
+    # ingredients = models.TextField()
+    ingredients = RichTextField(blank=True ,null=True)
+    # preparation_content = models.TextField()
+    preparation_content = RichTextField(blank=True ,null=True)
     featured_image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(

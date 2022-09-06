@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe, Comments
 from .forms import CommentForm, RecipeForm
+from django.urls import reverse_lazy
 
 
 class RecipeList(generic.ListView):
@@ -80,33 +81,6 @@ class RecipeLike(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-# def add_recipe(request):
-#     if request.method == 'POST':
-#         recipe_form = RecipeForm(request.POST)
-#         if recipe_form.is_valid():
-#             recipe_form.save()
-#             return redirect('home')
-#     recipe_form = RecipeForm
-#     context = {
-#         'recipe_form': recipe_form
-#     }
-#     return render(request, 'add_recipe.html', context)
-
-    
-# def edit_recipe(request, slug):
-#     recipe = get_object_or_404(Recipe, slug=slug)
-#     if request.method == 'POST':
-#         recipe_form = RecipeForm(request.POST, instance=recipe)
-#         if recipe_form.is_valid():
-#             recipe_form.save()
-#             return redirect('home')
-#     recipe_form = RecipeForm
-#     context = {
-#         'recipe_form': recipe_form
-#     }
-#     return render(request, 'edit_recipe.html', context)
-
-
 class AddRecipe(generic.CreateView):
     model = Recipe
     form_class = RecipeForm
@@ -115,5 +89,11 @@ class AddRecipe(generic.CreateView):
 
 class EditRecipe(generic.UpdateView):
     model = Recipe
+    form_class = RecipeForm
     template_name = 'edit_recipe.html'
-    fields = ['title', 'ingredients', 'preparation_content', 'featured_image', 'status']
+
+
+class DeleteRecipe(generic.DeleteView):
+    model = Recipe
+    template_name = 'delete_recipe.html'
+    success_url = reverse_lazy('home')

@@ -11,7 +11,8 @@
                 <!-- Recipe author goes before the | the post's created date goes after -->
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }} 
                     {% if user.is_superuser %}
-                    | <a href="{% url 'edit_recipe' recipe.slug %}">Edit</a></p>
+                    | <a href="{% url 'edit_recipe' recipe.slug %}" style="color: white;">Edit</a>
+                    | <a href="{% url 'delete_recipe' recipe.slug %}" style="color: white;">Remove</a></p>
                     {% else %}
                     </p>
                     {% endif %} 
@@ -107,19 +108,9 @@
                             </span> wrote:
                         </p>
                         <!-- The body of the comment goes before the | -->
-                        {% if user.is_authenticated %}
-                        {{ comment.body | linebreaks }}
-                            <td>
-                                <a href="">
-                                    <button>Edit</button>
-                                </a>
-                                <a href="#" aria-label="Delete comment"> Delete</a>
-                            </td>
-                        {% else %}
-
-                        {{ comment.body | linebreaks }}
-                        
-                        {% endif %}
+                        <p>
+                            {{ comment.body | linebreaks }}
+                        </p>
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}

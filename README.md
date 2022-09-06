@@ -63,6 +63,14 @@ The user can chech the website for new recipes and see the likes and comments on
 ![Start of the program](assets/images/04b-likes&comments-count-for-nonuser.png)
 ![Start of the program](assets/images/05b-comments-for-nonuser.png)
 
+* A super user can add, update and delete recipes. Edit and remove buttons are added both in the main page and the detailed view to have faster access. When adding or updating a recipe, we redirect to the detailed view of the recipe and when deleting we redirect to the home page, also there is a cancel button to take us back to the home page in case we do not want to delete.
+![Start of the program](assets/images/aa-Add-recipe.png)
+![Start of the program](assets/images/ab-add-recipe-page.png)
+![Start of the program](assets/images/ac-edit-remove.png)
+![Start of the program](assets/images/ad-edit-remove.png)
+![Start of the program](assets/images/ae-update-recipe.png)
+![Start of the program](assets/images/af-delete%20and%20cancel%20option.png)
+
 * The footer has external links to social media accounts
 
 ![Start of the program](assets/images/08-footer.png)

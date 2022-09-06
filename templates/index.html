@@ -30,7 +30,8 @@
                             <p class="card-text text-muted h6">{{ recipe.created_on }} <i 
                                     class="far fa-heart"></i> {{ recipe.number_of_likes }}
                                     {% if user.is_superuser %}
-                                    | <a href="{% url 'edit_recipe' recipe.slug %}">Edit</a></p>
+                                    | <a href="{% url 'edit_recipe' recipe.slug %}" style="color: purple;">Edit</a>
+                                    | <a href="{% url 'delete_recipe' recipe.slug %}" style="color: purple;">Remove</a></p>
                                     {% else %}
                                     </p>
                                     {% endif %} 

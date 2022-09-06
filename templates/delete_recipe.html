@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <h1>Remove Recipe:</h3>
+        <div class="form-group">
+            <h4>Are you sure you want to remove {{ recipe.title }}?</h4>
+            <a href="{% url 'home' %}" style="margin-top: 1em;">
+                <button type="submit" class="btn btn-signup btn-lg" style="margin: 5px; margin-left: 0;">Cancel</button>
+            </a>
+            <form method="POST" style="margin-top: 1em;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-signup btn-lg" style="margin: 5px; margin-left: 0;">Remove</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

@@ -7,7 +7,7 @@
         <h1>Edit current recipe:</h3>
         <p>Only the admin can edit recipes</p>
         <div class="form-group">
-            <form method="POST" style="margin-top: 1em;">
+            <form method="POST" style="margin-top: 1em;" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.media }}
                 {{ form.as_p }}

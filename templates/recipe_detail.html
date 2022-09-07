@@ -21,7 +21,7 @@
             <div class="d-none d-md-block col-md-4 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="/media/Good_Food_Display_-_NCI_Visuals_Online_lcfmur.jpg" alt="default image">
+                <img src="static/media/Good_Food_Display_-_NCI_Visuals_Online_lcfmur.jpg" alt="default image">
                 {% else %}
                 <img src=" {{ recipe.featured_image.url }}" alt="{{ recipe.title }}">
                 {% endif %}

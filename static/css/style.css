@@ -64,7 +64,7 @@ body {
 .masthead-text {
     background-color: #9e11a5aa;
     color: white;
-    position: relative;
+    position: static;
 }
 
 .masthead-image {
